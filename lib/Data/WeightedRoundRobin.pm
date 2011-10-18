@@ -2,7 +2,7 @@ package Data::WeightedRoundRobin;
 
 use strict;
 use warnings;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our $DEFAULT_WEIGHT = 100;
 
@@ -35,6 +35,10 @@ sub _normalize {
     }
     # foo
     else {
+        # \{ foo => 'bar' }
+        if (ref $data eq 'REF' && ref $$data eq 'HASH') {
+            $data = $$data;
+        }
         $key = $value = $data;
         $weight = $self->{default_weight};
     }
@@ -174,13 +178,11 @@ Data::WeightedRoundRobin - Serve data in a Weighted RoundRobin manner.
       { value => 'baz', weight => 50 },
       { key => 'hoge', value => [qw/fuga piyo/], weight => 120 },
   ]);
-  $drw->next; # 'foo' : 'bar' : 'baz' : [qw/fuga piyo/] = 100 : 100 : 50 : 120
+  $dwr->next; # 'foo' : 'bar' : 'baz' : [qw/fuga piyo/] = 100 : 100 : 50 : 120
 
 =head1 DESCRIPTION
 
 Data::WeightedRoundRobin is a Serve data in a Weighted RoundRobin manner.
-
-Inspired from MyDNS RR logic.
 
 =head1 METHODS
 
@@ -199,6 +201,7 @@ Creates a Data::WeightedRoundRobin instance.
       { value => 'bar' },
       { value => 'baz', weight => 120 },
       { key => 'qux', value => [qw/q u x/], weight => 50 },
+      \{ foo => 'bar' },
   ]);
 
 Sets default_weight option, DEFAULT is B<< $Data::WeightedRoundRobin::DEFAULT_WEIGHT >>.
