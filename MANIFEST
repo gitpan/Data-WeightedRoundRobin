@@ -21,6 +21,7 @@ t/03_set.t
 t/04_add.t
 t/05_replace.t
 t/06_remove.t
+t/07_save.t
 xt/01_podspell.t
 xt/02_pod.t
 xt/03_pod-coverage.t
