@@ -1,0 +1,78 @@
+{
+   "abstract" : "Serve data in a Weighted RoundRobin manner.",
+   "author" : [
+      "xaicron <xaicron {at} cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Minilla/v0.4.3",
+   "license" : "perl_5",
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Data-WeightedRoundRobin",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "inc",
+         "share",
+         "eg",
+         "examples",
+         "author"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.36"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "CPAN::Meta" : "0",
+            "CPAN::Meta::Prereqs" : "0",
+            "Module::Build" : "0.38"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "Test::CPAN::Meta" : "0",
+            "Test::MinimumVersion" : "0.10108",
+            "Test::Pod" : "1.41",
+            "Test::Spellunker" : "v0.2.2"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Scope::Guard" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Test::More" : "0.96"
+         }
+      }
+   },
+   "provides" : {
+      "Data::WeightedRoundRobin" : {
+         "file" : "lib/Data/WeightedRoundRobin.pm",
+         "version" : "0.06"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/xaicron/p5-Data-WeightedRoundRobin/issues"
+      },
+      "homepage" : "https://github.com/xaicron/p5-Data-WeightedRoundRobin",
+      "repository" : {
+         "url" : "git://github.com/xaicron/p5-Data-WeightedRoundRobin.git",
+         "web" : "https://github.com/xaicron/p5-Data-WeightedRoundRobin"
+      }
+   },
+   "version" : "0.06",
+   "x_contributors" : [
+      "xaicron <xaicron@gmail.com>"
+   ]
+}

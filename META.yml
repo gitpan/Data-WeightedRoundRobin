@@ -6,10 +6,11 @@ build_requires:
   ExtUtils::MakeMaker: 6.36
   Test::More: 0.96
 configure_requires:
-  ExtUtils::MakeMaker: 6.36
-distribution_type: module
-dynamic_config: 1
-generated_by: 'Module::Install version 1.06'
+  CPAN::Meta: 0
+  CPAN::Meta::Prereqs: 0
+  Module::Build: 0.38
+dynamic_config: 0
+generated_by: 'Minilla/v0.4.3, CPAN::Meta::Converter version 2.130880'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -17,12 +18,23 @@ meta-spec:
 name: Data-WeightedRoundRobin
 no_index:
   directory:
-    - inc
     - t
     - xt
+    - inc
+    - share
+    - eg
+    - examples
+    - author
+provides:
+  Data::WeightedRoundRobin:
+    file: lib/Data/WeightedRoundRobin.pm
+    version: 0.06
 requires:
   Scope::Guard: 0
 resources:
-  license: http://dev.perl.org/licenses/
-  repository: https://github.com/xaicron/p5-Data-WeightedRoundRobin
-version: 0.05
+  bugtracker: https://github.com/xaicron/p5-Data-WeightedRoundRobin/issues
+  homepage: https://github.com/xaicron/p5-Data-WeightedRoundRobin
+  repository: git://github.com/xaicron/p5-Data-WeightedRoundRobin.git
+version: 0.06
+x_contributors:
+  - 'xaicron <xaicron@gmail.com>'
